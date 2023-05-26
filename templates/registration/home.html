@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Load the Google Translate API -->
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement (
+        {pageLanguage:'en'},
+        'google_translate_element'
+      );
+    }
+  </script>
+</head>
+<body>
+  <!-- Add a translation widget to the page -->
+  <div id="google_translate_element"></div>
+  <!-- Add some sample content to the page -->
+  <p>hello</p>
+  <p>hi</p>
+</body>
+</html>

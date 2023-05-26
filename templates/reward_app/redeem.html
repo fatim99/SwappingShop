@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Redeem{% endblock %}
+
+{% block content %}
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-center mb-3">Redeem Coupons</h1>
+                {% for coupon in coupons %}
+                <div class="card mb-3">
+                    <div class="card-header text-center">{{ coupon.sponsor_name }}</div>
+                    <div class="card-body">
+                        <p class="card-text">Needed Points: {{ coupon.needed_points }}</p>
+                        <p class="card-text">Expiration Date: {{ coupon.expiration_date }}</p>
+                        <p class="card-text">unique Code: {{ coupon.unique_code }}</p>
+                       
+                        <form action="{% url 'reward:redeem_coupon' coupon.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-block">Thank You For The Code  Redeem</button>
+                        </form>
+                      
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
